@@ -1,0 +1,31 @@
+[package]
+name = "rust-hasura"
+version = "0.1.0"
+edition = "2018"
+authors = ["ronanyeah"]
+repository = "https://github.com/ronanyeah/rust-hasura"
+description = "Rust / GraphQL / Hasura"
+license = "MIT"
+readme = "README.md"
+keywords = ["rust"]
+categories = ["rust"]
+
+[dependencies]
+juniper = "0.15.7"
+graphql_client = "0.10.0"
+serde = "1.0.126"
+serde_json = "1.0.64"
+# Required to rename uuid::Uuid -> uuid and avoid collision.
+uuid_ = { package = "uuid", version = "0.8.2", features = ["serde"] }
+jsonwebtoken = "7.2.0"
+reqwest = { version = "0.11.4", features = ["json"] }
+envy = "0.4.2"
+async-std = "1.9.0"
+tokio = { version = "1.9.0", features = ["full"] }
+warp = "0.3.1"
+cookie = "0.15.1"
+time = "0.2.27"
+
+[[bin]]
+name = "example"
+path = "src/main.rs"
